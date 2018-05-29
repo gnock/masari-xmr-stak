@@ -231,7 +231,7 @@ __global__ void cryptonight_core_gpu_phase2( int threads, int bfactor, int parti
 	uint32_t t1[2], t2[2], res;
 
 	uint32_t tweak1_2[2];
-	if (ALGO == cryptonight_monero || ALGO == cryptonight_aeon)
+	if (ALGO == cryptonight_monero || ALGO == cryptonight_aeon || ALGO == cryptonight_masari)
 	{
 		uint32_t * state = d_ctx_state + thread * 50;
 		tweak1_2[0] = (d_input[8] >> 24) | (d_input[9] << 8);
@@ -275,7 +275,7 @@ __global__ void cryptonight_core_gpu_phase2( int threads, int bfactor, int parti
 			t1[0] = shuffle<4>(sPtr,sub, d[x], 0);
 
 			const uint32_t z = d[0] ^ d[1];
-			if(ALGO == cryptonight_monero || ALGO == cryptonight_aeon)
+			if(ALGO == cryptonight_monero || ALGO == cryptonight_aeon || ALGO == cryptonight_masari)
 			{
 				const uint32_t table = 0x75310U;
 				const uint32_t index = ((z >> 26) & 12) | ((z >> 23) & 2);
@@ -304,7 +304,7 @@ __global__ void cryptonight_core_gpu_phase2( int threads, int bfactor, int parti
 			res = *( (uint64_t *) t2 )  >> ( sub & 1 ? 32 : 0 );
 
 			
-			if(ALGO == cryptonight_monero || ALGO == cryptonight_aeon)
+			if(ALGO == cryptonight_monero || ALGO == cryptonight_aeon || ALGO == cryptonight_masari)
 			{
 				const uint32_t tweaked_res = tweak1_2[sub & 1] ^ res;
 				const uint32_t long_state_update = sub2 ? tweaked_res : res;
@@ -491,6 +491,10 @@ void cryptonight_core_cpu_hash(nvid_ctx* ctx, xmrstak_algo miner_algo, uint32_t 
 	else if(miner_algo == cryptonight_aeon)
 	{
 		cryptonight_core_gpu_hash<CRYPTONIGHT_LITE_ITER, CRYPTONIGHT_LITE_MASK, CRYPTONIGHT_LITE_MEMORY/4, cryptonight_aeon>(ctx, startNonce);
+	}
+	else if(miner_algo == cryptonight_masari)
+	{
+		cryptonight_core_gpu_hash<CRYPTONIGHT_MASARI_ITER, CRYPTONIGHT_MASK, CRYPTONIGHT_MEMORY/4, cryptonight_masari>(ctx, startNonce);
 	}
 
 }
