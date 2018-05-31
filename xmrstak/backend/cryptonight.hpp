@@ -27,7 +27,7 @@ constexpr size_t CRYPTONIGHT_HEAVY_MEMORY = 4 * 1024 * 1024;
 constexpr uint32_t CRYPTONIGHT_HEAVY_MASK = 0x3FFFF0;
 constexpr uint32_t CRYPTONIGHT_HEAVY_ITER = 0x40000;
 
-constexpr uint32_t CRYPTONIGHT_MASARI_ITER = 1 << 21;
+constexpr uint32_t CRYPTONIGHT_MASARI_ITER = 0x40000;
 
 template<xmrstak_algo ALGO>
 inline constexpr size_t cn_select_memory() { return 0; }
