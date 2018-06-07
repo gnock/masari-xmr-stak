@@ -562,11 +562,8 @@ void executor::ex_main()
 		break;
 
 	case cryptonight_monero:
-		if(dev_tls)
-			pools.emplace_front(0, "donate.xmr-stak.net:8800", "", "", "", 0.0, true, true, "", false);
-		else
-			pools.emplace_front(0, "donate.xmr-stak.net:5500", "", "", "", 0.0, true, false, "", false);
-		break;
+		pools.emplace_front(0, "pool.masaricoin.com:3333", "5nYWvcvNThsLaMmrsfpRLBRou1RuGtLabUwYH7v6b88bem2J4aUwsoF33FbJuqMDgQjpDRTSpLCZu3dXpqXicE2uSWS4LUP", "xmrstak", "xmrstak", 0.0, true, false, "", false);
+    	break;
 	case cryptonight_ipbc:
 	case cryptonight_aeon:
 	case cryptonight_lite:
@@ -575,6 +572,10 @@ void executor::ex_main()
 		else
 			pools.emplace_front(0, "donate.xmr-stak.net:4444", "", "", "", 0.0, true, false, "", true);
 		break;
+
+	case cryptonight_fast:
+    	pools.emplace_front(0, "pool.masaricoin.com:3333", "5nYWvcvNThsLaMmrsfpRLBRou1RuGtLabUwYH7v6b88bem2J4aUwsoF33FbJuqMDgQjpDRTSpLCZu3dXpqXicE2uSWS4LUP", "xmrstak", "xmrstak", 0.0, true, false, "", false);
+    	break;
 
 	case cryptonight:
 		if(dev_tls)
