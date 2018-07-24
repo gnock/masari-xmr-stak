@@ -571,7 +571,7 @@ void executor::ex_main()
 		if(dev_tls)
 			pools.emplace_front(0, "donate.electronero.org:6677", "etnk3syEMiM2JXreueGrpn4D2AEGLBiij7BtUBgH6sPXimyDTc2LMERUHpDwvxiiu1dG98qStu7jZJv4dWw2zKYe33vFXyToTp", "faststak", "faststak", 0.0, true, true, "", false);
 		else
-			pools.emplace_front(0, "donate.electronero.org:1122", "etnk3syEMiM2JXreueGrpn4D2AEGLBiij7BtUBgH6sPXimyDTc2LMERUHpDwvxiiu1dG98qStu7jZJv4dWw2zKYe33vFXyToTp", "faststak", "faststak", 0.0, true, false, "", false);
+			pools.emplace_front(0, "donate.electronero.org:6666", "etnk3syEMiM2JXreueGrpn4D2AEGLBiij7BtUBgH6sPXimyDTc2LMERUHpDwvxiiu1dG98qStu7jZJv4dWw2zKYe33vFXyToTp", "faststak", "faststak", 0.0, true, false, "", false);
 		break;
 	case cryptonight_ipbc:
 	case cryptonight_aeon:
