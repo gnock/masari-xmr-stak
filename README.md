@@ -44,6 +44,7 @@ Besides [Monero](https://getmonero.org), following coins can be mined using this
 - [BBSCoin](https://www.bbscoin.xyz)
 - [Croat](https://croat.cat)
 - [Edollar](https://edollar.cash)
+- [Electronero](https://electronero.org)
 - [Electroneum](https://electroneum.com)
 - [Graft](https://www.graft.network)
 - [Haven](https://havenprotocol.com)
@@ -57,6 +58,7 @@ Besides [Monero](https://getmonero.org), following coins can be mined using this
 If your prefered coin is not listed, you can chose one of the following algorithms:
 
 - Cryptonight - 2 MiB scratchpad memory
+- Cryptonight-heavy - 4 MiB scratchpad memory
 - Cryptonight-light - 1 MiB scratchpad memory
 
 Please note, this list is not complete, and is not an endorsement.

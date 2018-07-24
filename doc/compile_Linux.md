@@ -85,7 +85,7 @@
     make
     sudo make install
     cd ..
-    git clone http://github.com/fireice-uk/xmr-stak
+    git clone https://github.com/fireice-uk/xmr-stak
     cd xmr-stak
     mkdir build
     cd build
