@@ -1,4 +1,4 @@
-# Compile **xmr-stak** for Windows
+# Compile **fast-stak** for Windows
 
 ## Install Dependencies
 
@@ -37,12 +37,15 @@
 
 ### Dependencies OpenSSL/Hwloc and Microhttpd
 - For CUDA 8*:
-  - Download version 1 of the precompiled binary from https://github.com/fireice-uk/xmr-stak-dep/releases/download/v1/xmr-stak-dep.zip
+  - Download version 1 of the precompiled binary from xmr-stak https://github.com/fireice-uk/xmr-stak-dep/releases/download/v1/xmr-stak-dep.zip
   - Version 1 of the pre-compiled dependencies is not compatible with Visual Studio Toolset v141
 - For CUDA 9* **and/or** AMD GPUs, CPU:
-  - Download version 2 of the precompiled binary from https://github.com/fireice-uk/xmr-stak-dep/releases/download/v2/xmr-stak-dep.zip
+  - Download version 2 of the precompiled binary from xmr-stak https://github.com/fireice-uk/xmr-stak-dep/releases/download/v2/xmr-stak-dep.zip
   - Version 2 of the pre-compiled dependencies is not compatible with Visual Studio Toolset v140
 - Extract archive to `C:\xmr-stak-dep`
+
+I compile them without these using a few flags, you can skip the "deps" for now and pile them on later if "you want to"
+```cmake -G "Visual Studio 14 2015 Win64" .. -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF -DMICROHTTPD_ENABLE=OFF -DOpenSSL_ENABLE=OFF -DHWLOC_ENABLE=OFF```
 
 ### Validate the Dependency Folder
 
