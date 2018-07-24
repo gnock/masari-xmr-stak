@@ -1,4 +1,4 @@
-# Compile **xmr-stak** for FreeBSD
+# Compile **fast-stak** for FreeBSD
 
 ## Install Dependencies
 
@@ -10,9 +10,9 @@ From the root shell, run the following commands:
 
 Type 'y' and hit enter to proceed with installing the packages.
 
-    git clone https://github.com/fireice-uk/xmr-stak.git
-    mkdir xmr-stak/build
-    cd xmr-stak/build
+    git clone https://github.com/fast-stak/fast-stak.git
+    mkdir fast-stak/build
+    cd fast-stak/build
     cmake ..
     make install
 
