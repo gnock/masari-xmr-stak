@@ -5,7 +5,7 @@
 ### Preparation
 
 - Open a command line (Windows key + r) and enter `cmd`
-- Execute `mkdir C:\xmr-stak-dep`
+- Execute `mkdir C:\fast-stak-dep`
 
 ### Visual Studio Community 2017
 
@@ -52,12 +52,12 @@ I compile them without these using a few flags, you can skip the "deps" for now 
 - Open a command line (Windows key + r) and enter `cmd`
 - Execute
    ```
-   cd c:\xmr-stak-dep
+   cd c:\fast-stak-dep
    tree .
    ```
 - You should see something like this:
   ```
-    C:\xmr-stak-dep>tree .
+    C:\fast-stak-dep>tree .
     Folder PATH listing for volume Windows
     Volume serial number is XX02-XXXX
     C:\XMR-STAK-DEP
@@ -78,12 +78,12 @@ I compile them without these using a few flags, you can skip the "deps" for now 
         └───lib
   ```
 
-## Compile
+## Optional Dependencies
 
 - Download xmr-stak [Source Code.zip](https://github.com/fireice-uk/xmr-stak/releases) and save to a location in your home folder (C:\Users\USERNAME\)
-- Extract `Source Code.zip` (e.g. to `C:\Users\USERNAME\xmr-stak-<version>`)
+- Extract `Source Code.zip` (e.g. to `C:\Users\USERNAME\fast-stak-<version>`)
 - Open a command line (Windows key + r) and enter `cmd`
-- Go to extracted source code directory (e.g. `cd C:\Users\USERNAME\xmr-stak-<version>`)
+- Go to extracted source code directory (e.g. `cd C:\Users\USERNAME\fast-stak-<version>`)
 - Execute the following commands (NOTE: path to Visual Studio Community 2017 can be different)
   ```
   # Execute next line only if compiling for Cuda 9.x and using Visual Studio 2017 >= 15.5 (released 12/04/17)
@@ -99,6 +99,12 @@ I compile them without these using a few flags, you can skip the "deps" for now 
 
   set CMAKE_PREFIX_PATH=C:\xmr-stak-dep\hwloc;C:\xmr-stak-dep\libmicrohttpd;C:\xmr-stak-dep\openssl
   ```
+## Compile
+Open Visual Studi command line, I use Visual Studio 2015 x64 and x32
+X64
+```cmake -G "Visual Studio 14 2015 Win64" .. -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF -DMICROHTTPD_ENABLE=OFF -DOpenSSL_ENABLE=OFF -DHWLOC_ENABLE=OFF```
+X32
+```cmake -G "Visual Studio 14 2015 Win32" .. -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF -DMICROHTTPD_ENABLE=OFF -DOpenSSL_ENABLE=OFF -DHWLOC_ENABLE=OFF```
 
 ### CMake
 
@@ -111,6 +117,7 @@ I compile them without these using a few flags, you can skip the "deps" for now 
 
   cd bin\Release
 
-  copy C:\xmr-stak-dep\openssl\bin\* .
+  fast-stak.exe
   ```
+  optional: ```copy C:\fast-stak-dep\openssl\bin\* .```
 - Miner is by default compiled for NVIDIA GPUs (if CUDA is installed), AMD GPUs (if the AMD APP SDK is installed) and CPUs.
