@@ -1,4 +1,4 @@
-# Compile **fast-stak** for FreeBSD
+# Compile **xmr-stak** for FreeBSD
 
 ## Install Dependencies
 
