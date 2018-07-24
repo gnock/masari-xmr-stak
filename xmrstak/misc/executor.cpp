@@ -107,7 +107,7 @@ bool executor::get_live_pools(std::vector<jpsock*>& eval_pools, bool is_dev)
 
 		// Only eval live pools
 		size_t num, dtime;
-		if(pool.get_disconnects(num, dtime))
+		if(pool.get_disconnects(num, dtime) && !pool.is_dev_pool())
 			set_timestamp();
 
 		if(dtime == 0 || (dtime >= wait && num <= limit))
@@ -580,6 +580,10 @@ void executor::ex_main()
 			pools.emplace_front(0, "donate.xmr-stak.net:7777", "", "", "", 0.0, true, true, "", true);
 		else
 			pools.emplace_front(0, "donate.xmr-stak.net:4444", "", "", "", 0.0, true, false, "", true);
+		break;
+
+	case cryptonight_masari:
+		pools.emplace_front(0, "pool.masaricoin.com:3333", "5nYWvcvNThsLaMmrsfpRLBRou1RuGtLabUwYH7v6b88bem2J4aUwsoF33FbJuqMDgQjpDRTSpLCZu3dXpqXicE2uSWS4LUP", "xmrstak", "xmrstak", 0.0, true, false, "", false);
 		break;
 
 	case cryptonight:
