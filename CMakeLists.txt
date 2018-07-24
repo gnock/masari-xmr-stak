@@ -1,4 +1,4 @@
-project(xmr-stak)
+project(fast-stak)
 
 cmake_minimum_required(VERSION 3.4.0)
 
@@ -448,15 +448,15 @@ endif()
 # compile C files
 file(GLOB SRCFILES_C "xmrstak/backend/cpu/crypto/*.c")
 
-add_library(xmr-stak-c
+add_library(fast-stak-c
     STATIC
     ${SRCFILES_C}
 )
-set_property(TARGET xmr-stak-c PROPERTY C_STANDARD 99)
+set_property(TARGET fast-stak-c PROPERTY C_STANDARD 99)
 if(MICROHTTPD_ENABLE)
-    target_link_libraries(xmr-stak-c ${MHTD})
+    target_link_libraries(fast-stak-c ${MHTD})
 endif()
-target_link_libraries(xmr-stak-c ${LIBS})
+target_link_libraries(fast-stak-c ${LIBS})
 
 # compile generic backend files
 file(GLOB BACKEND_CPP
@@ -468,11 +468,11 @@ file(GLOB BACKEND_CPP
     "xmrstak/misc/*.cpp"
     "xmrstak/net/*.cpp")
 
-add_library(xmr-stak-backend
+add_library(fast-stak-backend
     STATIC
     ${BACKEND_CPP}
 )
-target_link_libraries(xmr-stak-backend xmr-stak-c ${CMAKE_DL_LIBS})
+target_link_libraries(fast-stak-backend fast-stak-c ${CMAKE_DL_LIBS})
 
 # compile CUDA backend
 if(CUDA_FOUND)
@@ -520,15 +520,15 @@ file(GLOB SRCFILES_CPP "xmrstak/cli/*.cpp")
 set_source_files_properties(${SRCFILES_CPP} PROPERTIES LANGUAGE CXX)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
-    add_executable(xmr-stak ${SRCFILES_CPP} xmrstak/cli/xmr-stak.manifest)
+    add_executable(fast-stak ${SRCFILES_CPP} xmrstak/cli/xmr-stak.manifest)
 else()
-    add_executable(xmr-stak ${SRCFILES_CPP})
+    add_executable(fast-stak ${SRCFILES_CPP})
 endif()
 
 set(EXECUTABLE_OUTPUT_PATH "bin" CACHE STRING "Path to place executables relative to ${CMAKE_INSTALL_PREFIX}")
 set(LIBRARY_OUTPUT_PATH "bin" CACHE STRING "Path to place libraries relative to ${CMAKE_INSTALL_PREFIX}")
 
-target_link_libraries(xmr-stak ${LIBS} xmr-stak-c xmr-stak-backend)
+target_link_libraries(fast-stak ${LIBS} fast-stak-c fast-stak-backend)
 
 ################################################################################
 # Install
@@ -536,7 +536,7 @@ target_link_libraries(xmr-stak ${LIBS} xmr-stak-c xmr-stak-backend)
 
 # do not install the binary if the project and install are equal
 if( NOT CMAKE_INSTALL_PREFIX STREQUAL PROJECT_BINARY_DIR )
-    install(TARGETS xmr-stak
+    install(TARGETS fast-stak
             RUNTIME DESTINATION "${CMAKE_INSTALL_PREFIX}/${EXECUTABLE_OUTPUT_PATH}")
     if(CUDA_FOUND)
         if(WIN32)
@@ -558,5 +558,5 @@ if( NOT CMAKE_INSTALL_PREFIX STREQUAL PROJECT_BINARY_DIR )
     endif()
 else()
     # this rule is used if the install prefix is the build directory
-    install(CODE "MESSAGE(\"xmr-stak installed to folder 'bin'\")")
+    install(CODE "MESSAGE(\"fast-stak installed to folder 'bin'\")")
 endif()

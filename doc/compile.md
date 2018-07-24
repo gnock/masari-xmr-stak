@@ -1,4 +1,4 @@
-# Compile xmr-stak
+# Compile fast-stak
 
 ## Content Overview
 * [Build System](#build-system)

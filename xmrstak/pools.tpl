@@ -25,6 +25,7 @@ POOLCONF],
  *    croat
  *    edollar
  *    electroneum
+ *    electronero
  *    graft
  *    haven (automatic switch with block version 3 to cryptonight_haven)
  *    intense
