@@ -105,6 +105,8 @@ X64
 ```cmake -G "Visual Studio 14 2015 Win64" .. -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF -DMICROHTTPD_ENABLE=OFF -DOpenSSL_ENABLE=OFF -DHWLOC_ENABLE=OFF```
 X32
 ```cmake -G "Visual Studio 14 2015 Win32" .. -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF -DMICROHTTPD_ENABLE=OFF -DOpenSSL_ENABLE=OFF -DHWLOC_ENABLE=OFF```
+ARM
+```cmake -G "Visual Studio 14 2015 ARM" .. -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF -DMICROHTTPD_ENABLE=OFF -DOpenSSL_ENABLE=OFF -DHWLOC_ENABLE=OFF```
 
 ### CMake
 
@@ -117,7 +119,7 @@ X32
 
   cd bin\Release
 
-  xmr-stak.exe
+  copy C:\xmr-stak-dep\openssl\bin\* .
   ```
-  optional: ```copy C:\xmr-stak-dep\openssl\bin\* .```
+
 - Miner is by default compiled for NVIDIA GPUs (if CUDA is installed), AMD GPUs (if the AMD APP SDK is installed) and CPUs.
