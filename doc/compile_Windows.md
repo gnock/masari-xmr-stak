@@ -1,11 +1,11 @@
-# Compile **fast-stak** for Windows
+# Compile **xmr-stak** for Windows
 
 ## Install Dependencies
 
 ### Preparation
 
 - Open a command line (Windows key + r) and enter `cmd`
-- Execute `mkdir C:\fast-stak-dep`
+- Execute `mkdir C:\xmr-stak-dep`
 
 ### Visual Studio Community 2017
 
@@ -52,12 +52,12 @@ I compile them without these using a few flags, you can skip the "deps" for now 
 - Open a command line (Windows key + r) and enter `cmd`
 - Execute
    ```
-   cd c:\fast-stak-dep
+   cd c:\xmr-stak-dep
    tree .
    ```
 - You should see something like this:
   ```
-    C:\fast-stak-dep>tree .
+    C:\xmr-stak-dep>tree .
     Folder PATH listing for volume Windows
     Volume serial number is XX02-XXXX
     C:\XMR-STAK-DEP
@@ -81,9 +81,9 @@ I compile them without these using a few flags, you can skip the "deps" for now 
 ## Optional Dependencies
 
 - Download xmr-stak [Source Code.zip](https://github.com/fireice-uk/xmr-stak/releases) and save to a location in your home folder (C:\Users\USERNAME\)
-- Extract `Source Code.zip` (e.g. to `C:\Users\USERNAME\fast-stak-<version>`)
+- Extract `Source Code.zip` (e.g. to `C:\Users\USERNAME\xmr-stak-<version>`)
 - Open a command line (Windows key + r) and enter `cmd`
-- Go to extracted source code directory (e.g. `cd C:\Users\USERNAME\fast-stak-<version>`)
+- Go to extracted source code directory (e.g. `cd C:\Users\USERNAME\xmr-stak-<version>`)
 - Execute the following commands (NOTE: path to Visual Studio Community 2017 can be different)
   ```
   # Execute next line only if compiling for Cuda 9.x and using Visual Studio 2017 >= 15.5 (released 12/04/17)
@@ -117,7 +117,7 @@ X32
 
   cd bin\Release
 
-  fast-stak.exe
+  xmr-stak.exe
   ```
-  optional: ```copy C:\fast-stak-dep\openssl\bin\* .```
+  optional: ```copy C:\xmr-stak-dep\openssl\bin\* .```
 - Miner is by default compiled for NVIDIA GPUs (if CUDA is installed), AMD GPUs (if the AMD APP SDK is installed) and CPUs.
