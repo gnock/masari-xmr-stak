@@ -1,4 +1,4 @@
-# Compile **fast-stak** for Linux
+# Compile **xmr-stak** for Linux
 
 ## Install Dependencies
 
@@ -19,25 +19,25 @@
 ```
     # Ubuntu / Debian
     sudo apt install libmicrohttpd-dev libssl-dev cmake build-essential libhwloc-dev
-    git clone https://github.com/fast-stak/fast-stak.git
-    mkdir fast-stak/build
-    cd fast-stak/build
+    git clone https://github.com/fireice-uk/xmr-stak.git
+    mkdir xmr-stak/build
+    cd xmr-stak/build
     cmake ..
     make install
 
     # Arch
     sudo pacman -S --needed base-devel hwloc openssl cmake libmicrohttpd
-    git clone https://github.com/fast-stak/fast-stak.git
-    mkdir fast-stak/build
-    cd fast-stak/build
+    git clone https://github.com/fireice-uk/xmr-stak.git
+    mkdir xmr-stak/build
+    cd xmr-stak/build
     cmake ..
     make install
 
     # Fedora
     sudo dnf install gcc gcc-c++ hwloc-devel libmicrohttpd-devel libstdc++-static make openssl-devel cmake
-    git clone https://github.com/fast-stak/fast-stak.git
-    mkdir fast-stak/build
-    cd fast-stak/build
+    git clone https://github.com/fireice-uk/xmr-stak.git
+    mkdir xmr-stak/build
+    cd xmr-stak/build
     cmake ..
     make install
 
@@ -45,9 +45,9 @@
     sudo yum install centos-release-scl epel-release
     sudo yum install cmake3 devtoolset-4-gcc* hwloc-devel libmicrohttpd-devel openssl-devel make
     scl enable devtoolset-4 bash
-    git clone https://github.com/fast-stak/fast-stak.git
-    mkdir fast-stak/build
-    cd fast-stak/build
+    git clone https://github.com/fireice-uk/xmr-stak.git
+    mkdir xmr-stak/build
+    cd xmr-stak/build
     cmake3 ..
     make install
 
@@ -60,9 +60,9 @@
     cd /tmp/cmake-3.4.1/ && ./configure && make && sudo make install && cd -
     sudo update-alternatives --install /usr/bin/cmake cmake /usr/local/bin/cmake 1 --force
     sudo apt install libmicrohttpd-dev libssl-dev libhwloc-dev
-    git clone https://github.com/fast-stak/fast-stak.git
-    mkdir fast-stak/build
-    cd fast-stak/build
+    git clone https://github.com/fireice-uk/xmr-stak.git
+    mkdir xmr-stak/build
+    cd xmr-stak/build
     cmake ..
     make install
 
@@ -85,8 +85,8 @@
     make
     sudo make install
     cd ..
-    git clone http://github.com/fast-stak/fast-stak
-    cd fast-stak
+    git clone https://github.com/fireice-uk/xmr-stak
+    cd xmr-stak
     mkdir build
     cd build
     CC=gcc cmake .. -DCUDA_ENABLE=OFF \
@@ -96,7 +96,7 @@
 ```
 
 - g++ version 5.1 or higher is required for full C++11 support.
-If you want to compile the binary without installing libraries / compiler or just compile binary for some other distribution, please check the [build_fast-stak_docker.sh script](scripts/build_xmr-stak_docker/build_xmr-stak_docker.sh).
+If you want to compile the binary without installing libraries / compiler or just compile binary for some other distribution, please check the [build_xmr-stak_docker.sh script](scripts/build_xmr-stak_docker/build_xmr-stak_docker.sh).
 
 - Some newer gcc versions are not supported by CUDA (e.g. Ubuntu 17.10). It will require installing gcc 5 but you can avoid changing defaults.
 
@@ -110,6 +110,6 @@ cmake -DCUDA_HOST_COMPILER=/usr/bin/gcc-5 ..
     cmake -DCMAKE_LINK_STATIC=ON -DXMR-STAK_COMPILE=generic .
     make install
     cd bin\Release
-    copy C:\fast-stak-dep\openssl\bin\* .
+    copy C:\xmr-stak-dep\openssl\bin\* .
 ```
 Note - cmake caches variables, so if you want to do a dynamic build later you need to specify '-DCMAKE_LINK_STATIC=OFF'
