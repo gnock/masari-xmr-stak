@@ -1,7 +1,7 @@
 ###### fireice-uk's and psychocrypt's
-# FAST-Stak - Monero/Aeon All-in-One Mining Software
+# XMR-Stak - Monero/Aeon All-in-One Mining Software
 
-**FAST-Stak is ready for the POW change of Monero-v7, Aeon-v7, stellite-v4 and Sumukoin-v3**
+**XMR-Stak is ready for the POW change of Monero-v7, Aeon-v7, stellite-v4 and Sumukoin-v3**
 
 XMR-Stak is a universal Stratum pool miner. This miner supports CPUs, AMD and NVIDIA gpus and can be used to mine the crypto currency Monero and Aeon.
 
@@ -58,7 +58,6 @@ Besides [Monero](https://getmonero.org), following coins can be mined using this
 If your prefered coin is not listed, you can chose one of the following algorithms:
 
 - Cryptonight - 2 MiB scratchpad memory
-- Cryptonight-fast - 2 MiB scratchpad memory
 - Cryptonight-heavy - 4 MiB scratchpad memory
 - Cryptonight-light - 1 MiB scratchpad memory
 
@@ -66,7 +65,7 @@ Please note, this list is not complete, and is not an endorsement.
 
 ## Download
 
-You can find the latest releases and precompiled binaries on GitHub under [Releases](https://github.com/fast-stak/fast-stak/releases).
+You can find the latest releases and precompiled binaries on GitHub under [Releases](https://github.com/fireice-uk/xmr-stak/releases).
 
 ## Default Developer Donation
 
