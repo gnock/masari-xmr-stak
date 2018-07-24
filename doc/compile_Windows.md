@@ -99,7 +99,7 @@ I compile them without these using a few flags, you can skip the "deps" for now 
 
   set CMAKE_PREFIX_PATH=C:\xmr-stak-dep\hwloc;C:\xmr-stak-dep\libmicrohttpd;C:\xmr-stak-dep\openssl
   ```
-## Compile
+## Compile quick CPU build
 Open Visual Studi command line, I use Visual Studio 2015 x64 and x32
 X64
   ```
@@ -114,7 +114,7 @@ ARM
   cmake -G "Visual Studio 15 2017 ARM" .. -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF -DMICROHTTPD_ENABLE=OFF -DOpenSSL_ENABLE=OFF -DHWLOC_ENABLE=OFF
    ```
 
-### CMake
+### Compile via CMake
 
 - See [build options](https://github.com/fireice-uk/xmr-stak/blob/master/doc/compile.md#build-system) to enable or disable dependencies.
 - For CUDA 8* execute: `cmake -G "Visual Studio 15 2017 Win64" -T v140,host=x64 ..`
